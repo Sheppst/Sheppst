@@ -78,7 +78,7 @@ public class DisplacementOrgan : MonoBehaviour
         EmplacementList = new List<Transform>();
         for (int i = 0; i < Organs.Count; i++)
         {
-            if (Mid.position.z < Emplacement[i].position.z)
+            if (Mid.position.z > Emplacement[i].position.z)
                 continue;
             GameObject InstOrg = Instantiate(Organs[i], (Emplacement[i].position - Mid.position).normalized * Distance, Quaternion.identity);
             InstOrg.transform.LookAt(Mid.position);
